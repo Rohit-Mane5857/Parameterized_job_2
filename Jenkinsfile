@@ -12,7 +12,7 @@ pipeline {
                     def mavenUrl = "https://dlcdn.apache.org/maven/maven-3/${majorVersion}/${params.maven_version}/binaries/apache-maven-${params.maven_version}-bin.tar.gz"
                     sh """
                     cd /var/lib/jenkins/
-                    wget ${mavenUrl}
+                    sudo wget ${mavenUrl}
                     """
                 }
             }
@@ -21,7 +21,7 @@ pipeline {
             steps {
                 sh """
                 cd /opt
-                wget https://releases.hashicorp.com/terraform/${params.terraform_version}/terraform_${params.terraform_version}_linux_amd64.zip
+                sudo wget https://releases.hashicorp.com/terraform/${params.terraform_version}/terraform_${params.terraform_version}_linux_amd64.zip
                 """
             }
         }		
