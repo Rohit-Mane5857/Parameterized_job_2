@@ -7,18 +7,18 @@ pipeline {
     stages {
         stage('Download Maven') {
             steps {
-                sh '''
+                sh """
                 cd /var/lib/jenkins/
-                sudo wget https://dlcdn.apache.org/maven/maven-3/${maven_version}/binaries/apache-maven-${maven_version}-bin.tar.gz
-                '''
+                sudo wget https://dlcdn.apache.org/maven/maven-3/${params.maven_version}/binaries/apache-maven-${params.maven_version}-bin.tar.gz
+                """
             }
         }
         stage('Download Terraform') {
             steps {
-                sh '''
+                sh """
                 cd /opt
-                sudo wget https://releases.hashicorp.com/terraform/${terraform_version}/terraform_${terraform_version}_linux_amd64.zip
-                '''
+                sudo wget https://releases.hashicorp.com/terraform/${params.terraform_version}/terraform_${params.terraform_version}_linux_amd64.zip
+                """
             }
         }		
     }
