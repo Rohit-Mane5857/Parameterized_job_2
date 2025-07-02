@@ -9,7 +9,7 @@ pipeline {
             steps {
                 sh """
                 cd /var/lib/jenkins/
-                sudo wget https://dlcdn.apache.org/maven/maven-3/${params.maven_version}/binaries/apache-maven-${params.maven_version}-bin.tar.gz
+                wget https://dlcdn.apache.org/maven/maven-3/${params.maven_version}/binaries/apache-maven-${params.maven_version}-bin.tar.gz
                 """
             }
         }
@@ -17,7 +17,7 @@ pipeline {
             steps {
                 sh """
                 cd /opt
-                sudo wget https://releases.hashicorp.com/terraform/${params.terraform_version}/terraform_${params.terraform_version}_linux_amd64.zip
+                wget https://releases.hashicorp.com/terraform/${params.terraform_version}/terraform_${params.terraform_version}_linux_amd64.zip
                 """
             }
         }		
